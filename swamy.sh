@@ -40,4 +40,3 @@ dnf install $package -y
 validate $? "$package"
 fi
 done
-
