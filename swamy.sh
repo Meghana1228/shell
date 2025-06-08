@@ -8,7 +8,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 logsfolder="/var/log/shell/"
-scriptname="$(echo $0 | cut -d "." -f1)
+scriptname=$(echo $0 | cut -d "." -f1)
 logfile=$logsfolder/$scriptname.log
 mkdir -p $logsfolder
 
