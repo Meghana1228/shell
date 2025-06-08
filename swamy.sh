@@ -9,7 +9,7 @@ Y="\e[33m"
 N="\e[0m"
 logsfolder="/var/log/shell/"
 scriptname="$(echo $0 | cut -d "." -f1)
-logfile=$logsfolder/$scriptname.log"
+logfile="$logsfolder/$scriptname.log"
 mkdir -p $logsfolder
 
 if [ $userid -eq 0 ]
