@@ -22,9 +22,9 @@ fi
 validate(){
     if [ $1 -eq 0 ]
 then
-echo -e "$2 is $G successfully installed $N"&>>$logfile
+echo -e "$2 is $G successfully installed $N" | tee -a $logfile
 else
-echo -e "$2 installation is $Rfailed $N"&>>$logfile
+echo -e "$2 installation is $Rfailed $N" | tee -a $logfile
 exit 1
 fi
 }
@@ -34,9 +34,9 @@ do
 dnf list installed $package &>>$logfile
 if [ $? -eq 0 ]
 then
-echo -e "$package is $G already installed: nothing to do $N"&>>$logfile
+echo -e "$package is $G already installed: nothing to do $N"| tee -a $logfile
 else
-echo -e "$package is not installed:  $G going to install$N"&>>$logfile
+echo -e "$package is not installed:  $G going to install$N"| tee -a $logfile
 dnf install $package -y
 validate $? "$package"
 fi
