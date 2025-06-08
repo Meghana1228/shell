@@ -7,10 +7,6 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-logsfolder="var/log/shellscriptlogs"
-scriptname=$(echo $0 | cut -d "." -f1)
-logfile=$logsfolder/$scriptname.log"
-mkdir -p $logsfolder
 if [ $userid -eq 0 ]
 then
 echo "you are having root access : pls proceed"
@@ -21,7 +17,7 @@ fi
 validate(){
     if [ $1 -eq 0 ]
 then
-echo -e "$2 is $G successfully installed $N" &>>
+echo -e "$2 is $G successfully installed $N"
 else
 echo -e "$2 installation is $Rfailed $N"
 exit 1
@@ -40,3 +36,4 @@ dnf install $package -y
 validate $? "$package"
 fi
 done
+
