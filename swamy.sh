@@ -37,7 +37,7 @@ echo -e "$package is $G already installed: nothing to do $N" &>>logfile
 else
 echo -e "$package is not installed:  $G going to install$N" &>>logfile
 dnf install $package -y &>>logfile
-validate $? "$package"
+validate $? "$package" &>>logfile
 fi
 done
 
