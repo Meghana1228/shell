@@ -2,4 +2,4 @@
  
  NUMBERS=("ONE" "TWO" "THREE" "FOUR")
 
- echo "numbers are: ${Numbers[@]}"
+ echo "numbers are: $NUMBERS[@]"
