@@ -19,3 +19,15 @@ exit 1
 else
 echo " mysql is not installed so installing it"
 fi
+
+# install mysql
+
+dnf install mysql -y
+if [ $? -eq 0 ]
+then
+echo " mysql is successfully installed "
+exit 1
+else
+echo " mysql installaition is failed"
+exit
+fi
