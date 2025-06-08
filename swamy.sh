@@ -29,7 +29,7 @@ do
 dnf list installed $package
 if [ $? -eq 0 ]
 then
-echo -e "$package is already installed: nothing to do"
+echo -e "$package is $G already installed: nothing to do $N"
 else
 echo -e "$package is not installed:  $G going to install$N"
 dnf install $package -y
