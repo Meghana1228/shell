@@ -19,7 +19,7 @@ validate(){
 then
 echo -e "$2 is $G successfully installed $N"
 else
-echo "$2 installation is $Rfailed $N"
+echo -e "$2 installation is $Rfailed $N"
 exit 1
 fi
 }
@@ -29,9 +29,9 @@ do
 dnf list installed $package
 if [ $? -eq 0 ]
 then
-echo "$package is already installed: nothing to do"
+echo - e "$package is already installed: nothing to do"
 else
-echo "$package is not installed:  $G going to install$N"
+echo -e "$package is not installed:  $G going to install$N"
 dnf install $package -y
 validate $? "$package"
 fi
