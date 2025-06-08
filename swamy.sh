@@ -20,7 +20,7 @@ exit 1
 fi
 }
 
-for package in ${(packages[@])}
+for package in ${packages[@]}
 do
 dnf list installed $package
 if [ $? -eq 0 ]
