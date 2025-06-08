@@ -21,6 +21,7 @@ fi
 }
 
 for package in ${(packages[@])}
+do
 dnf list installed $package
 if [ $? -eq 0 ]
 then
@@ -30,4 +31,5 @@ echo "$package is not installed: going to install"
 dnf install $package -y
 validate $? "$package"
 fi
+done
 
