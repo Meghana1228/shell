@@ -26,19 +26,19 @@ echo "mysql is installation is failed"
 exit 1
 fi
 fi
-# installing python3
-dnf list installed python3
+# installing nginx
+dnf list installed nginx
 if [ $? -eq 0 ]
 then
-echo "python3 is already installed: nothing to do"
+echo " is already installed: nothing to do"
 else
-echo "python3 is not installed: going to install"
-dnf install python3 -y
+echo "nginx is not installed: going to install"
+dnf install nginx -y
 if [ $? -eq 0 ]
 then
-echo "python3 is successfully installed"
+echo "nginx is successfully installed"
 else
-echo "python3 is installation is failed"
+echo "nginx is installation is failed"
 exit 1
 fi
 fi
