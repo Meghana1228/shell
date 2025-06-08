@@ -3,10 +3,10 @@
 #checking root user or not
 userid=$(id -u)
 packages=("mysql" "nginx" "python")
-R=\e["31m"
-G=\e["32m"
-Y=\e["33m"
-N=\e["0m"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 if [ $userid -eq 0 ]
 then
 echo "you are having root access : pls proceed"
