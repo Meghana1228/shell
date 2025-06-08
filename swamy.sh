@@ -10,10 +10,11 @@ N="\e[0m"
 logsfolder="var/log/shell/"
 scriptname="$(echo $0 | cut -d "." -f1)
 logfile=$logsfolder/$scriptname.log"
+mkdir -p $logsfolder
 
 if [ $userid -eq 0 ]
 then
-echo "you are having root access : pls proceed"
+echo -e "$Gyou are having root access : pls proceed$N"
 else
 echo "you are not having root access: exiting"
 exit 1
