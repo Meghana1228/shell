@@ -3,6 +3,10 @@
 #checking root user or not
 userid=$(id -u)
 packages=("mysql" "nginx" "python")
+R=\e["31m"
+G=\e["32m"
+Y=\e["33m"
+N=\e["0m"
 if [ $userid -eq 0 ]
 then
 echo "you are having root access : pls proceed"
@@ -13,9 +17,9 @@ fi
 validate(){
     if [ $1 -eq 0 ]
 then
-echo "$2 is successfully installed"
+echo -e "$2 is $G successfully installed $N"
 else
-echo "$2 installation is failed"
+echo "$2 installation is $Rfailed $N"
 exit 1
 fi
 }
@@ -27,7 +31,7 @@ if [ $? -eq 0 ]
 then
 echo "$package is already installed: nothing to do"
 else
-echo "$package is not installed: going to install"
+echo "$package is not installed:  $G going to install$N"
 dnf install $package -y
 validate $? "$package"
 fi
