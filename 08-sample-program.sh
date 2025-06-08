@@ -9,33 +9,23 @@ echo " you are not running with root access"
 exit 1
 fi
 
-# check already installed or not
+validate (){
+    if [ $1 -eq 0 ]
+then
+echo " $2 is successfully installed "
+else
+echo " $2 installaition is going to install"
+exit 1
+fi
+}
 
 dnf list installed mysql 
 if [ $? -eq 0 ]
 then
 echo " mysql is already installed "
-exit 1
 else
-echo " mysql is not installed so installing it"
-fi
-
-# install mysql
-
+echo " mysql is going to install"
 dnf install mysql -y
-if [ $? -eq 0 ]
-then
-echo " mysql is successfully installed "
-else
-echo " mysql installaition is failed"
-exit 1
+validate $? "mysql"
 fi
 
-dnf install nginx -y
-if [ $? -eq 0 ]
-then
-echo " nginx is successfully installed "
-else
-echo " nginx installaition is failed"
-exit 1
-fi
